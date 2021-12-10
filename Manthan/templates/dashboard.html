@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container">
+            <img src="/static/img/work3.jpg" alt="" class="header__img">
+            <a href="#" class="header__logo">Akatsuki Security</a>
+            <div class="header__toggle">
+                <i class='bx bx-menu' id="header-toggle"></i>
+            </div>
+        </div>
+    </header>
+    <div class="nav" id="navbar">
+        <nav class="nav__container">
+            <div>
+                <a href="#" class="nav__link nav__logo">
+                    <i class='bx bxs-disc nav__icon'></i>
+                    <span class="nav__logo-name">Security<span>
+                </a>
+
+                <div class="nav__list">
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">Profile</h3>
+
+                        <a href="#" class="nav__link active">
+                            <i class='bx bx-home nav__icon'></i>
+                            <span class="nav__name">Home</span>
+                        </a>
+
+                        <div class="nav__dropdown">
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-user nav__icon'></i>
+                                <span class="nav__name">Profile</span>
+
+                            </a>
+
+
+                        </div>
+                    </div>
+
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">Menu</h3>
+
+                        <div class="nav__dropdown">
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-bell nav__icon'></i>
+                                <span class="nav__name">Notifications</span>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="{{url_for('logout')}}" class="nav__link nav__logout">
+                <i class='bx bx-log-out nav__icon'></i>
+                <span class="nav__name">Log Out</span>
+            </a>
+        </nav>
+    </div>
+
+    <!--========== CONTENTS ==========-->
+    <main>
+        <section>
+            <div id="links">
+                <div id="card">
+                    <h2 style="position: absolute; top: 10%;left: 10%;"> Survillance Method</h2>
+                    <div class="cards">
+                        <h3>RSTP</h3>
+                        <input type="url" placeholder="Enter RSTP link">
+                        <a href="{{url_for('rstp')}}">Survillance</a>
+                    </div>
+                    <div class="cards">
+                        <h3>You Tube</h3>
+                        <input type="url" placeholder="Enter You Tube link">
+                        <button>Survillance</button>
+                     </div>
+                    <div class="cards">
+                        <h3>Upload File</h3>
+                        <form action="{{url_for('uploader')}}" method = "post" enctype="multipart/form-data">
+                        <input type="file" name="file" placeholder="Upload Video File">
+                        <button type="submit">Survillance</button></form>
+                    </div></div>
+                </div>
+               
+            </div>
+        </section>
+    </main>
+
+    <!--========== MAIN JS ==========-->
+    <script src="/static/js/dashboard.js"></script>
+</body>
+
+</html>
